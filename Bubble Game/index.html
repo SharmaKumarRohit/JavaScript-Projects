@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="center">
+        <div class="panel">
+            <div class="panel__top">
+                <div class="elem">
+                    <h2>Hit</h2>
+                    <div id="hit" class="box center"></div>
+                </div>
+                <div class="elem">
+                    <h2>Timer</h2>
+                    <div id="timer" class="box center">60</div>
+                </div>
+                <div class="elem">
+                    <h2>Score</h2>
+                    <div id="score" class="box center">0</div>
+                </div>
+            </div>
+            <div class="panel__bottom"></div>
+            <div class="panel__overlay center">
+                <div class="overlay center">
+                    <div class="game__over">
+                        <h1>Game Over</h1>
+                        <h2 class="center">Score: <span id="view__score">0</span></h2>
+                        <button class="play__again">Play Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
