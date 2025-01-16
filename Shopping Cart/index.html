@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Feature</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main>
+        <header class="container">
+            <nav>
+                <i class="ri-menu-line"></i>
+                <i class="carticon ri-shopping-bag-2-fill"></i>
+            </nav>
+            <form>
+                <input type="search" placeholder="Search">
+                <button type="submit"><i class="ri-search-2-line"></i></button>
+            </form>
+            <div class="cart">
+                <div class="inner__cart"></div>
+                <div class="cross__icon close">
+                    <i class="close ri-close-line"></i>
+                </div>
+                <p class="total__price">Total Price: <span class="price"></span></p>
+            </div>
+        </header>
+        <section class="container">
+            <div class="home__section">
+                <div class="box box1"><i class="ri-home-2-line"></i></div>
+                <div class="box"><i class="ri-scroll-to-bottom-line"></i></div>
+                <div class="box"><i class="ri-store-2-line"></i></div>
+                <div class="box"><i class="ri-bookmark-line"></i></div>
+                <div class="box"><i class="ri-global-line"></i></div>
+                <div class="box"><i class="ri-chat-smile-3-line"></i></div>
+            </div>
+            <div class="products"></div>
+            <h2>Popular</h2>
+            <div class="popular__products"></div>
+        </section>
+        <section class="menu">
+            <div class="inner__menu">
+                <div class="left__icon">
+                    <i class="ri-home-2-fill"></i>
+                    <i class="ri-heart-fill"></i>
+                </div>
+                <div class="bag"><i class="ri-shopping-bag-fill"></i></div>
+                <div class="right__icon">
+                    <i class="ri-settings-fill"></i>
+                    <i class="ri-user-fill"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

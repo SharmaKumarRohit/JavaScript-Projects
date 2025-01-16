@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* ######################### UTILITY CLASSES ######################## */
+
+:root {
+    --hue: 120;
+    --color-primary: hsl(var(--hue), 4%, 96%);
+    --color-gray: hsl(var(--hue), 4%, 91%);
+    --color-icon: hsl(var(--hue), 4%, 81%);
+    --color-icon-dark: hsl(var(--hue), 4%, 35%);
+    --color-white: hsl(var(--hue), 4%, 100%);
+    --color-text: hsl(var(--hue), 4%, 45%);
+    --color-gradient: linear-gradient(to right bottom, #69628a, #040309);
+}
+
+.container {
+    max-width: 1200px;
+    width: 92%;
+    margin: auto;
+}
+
+main {
+    min-height: 100svh;
+    background-color: var(--color-primary);
+    padding-bottom: 0.1px;
+    position: relative;
+}
+
+/* ############################## HEADER SYTLING ####################### */
+header {
+    position: relative;
+}
+
+nav {
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > i {
+    font-size: 1.25rem;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+input, button {
+    border: none;
+    outline: none;
+}
+
+form input {
+    width: 84%;
+    padding: 1rem 0.65rem;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    background-color: var(--color-gray);
+}
+
+form input::placeholder {
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+form button {
+    padding: 1rem;
+    font-size: 0.95rem;
+    background: var(--color-gradient);
+    border-radius: 10px;
+    color: var(--color-white);
+}
+
+/* ######################### CART POPUP STYLING ####################### */
+.cart {
+    display: none;
+    position: absolute;
+    top: 15%;
+    right: 0;
+    width: 70vw;
+    min-height: 50vh;
+    background-color: var(--color-white);
+    z-index: 999;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.cart .inner__cart {
+    position: relative;
+    height: 10vh;
+    margin-top: 3.2rem;
+    padding: 0 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.cart__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35rem;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.cart__item .cart__image {
+    width: 45%;
+    height: 100%;
+    background-color: var(--color-gray);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cart__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart__info h3 {
+    font-size: 0.7rem;
+    text-transform: capitalize;
+    margin-bottom: 0.45rem;
+}
+
+.cart__info h5 {
+    font-size: 0.85rem;
+    color: var(--color-text);
+}
+
+.cross__icon {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.35rem;
+    background: var(--color-gradient);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: goldenrod;
+    padding: 0.45rem 0.5rem;
+    font-size: 1.15rem;
+}
+
+.delete__item {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 0.16rem 0.5rem;
+    border-radius: 50%;
+    background-color: crimson;
+    color: var(--color-white);
+}
+
+.total__price {
+    position: absolute;
+    top: 1.15rem;
+    left: 0.85rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+/* ############################ HOME STYLING ####################### */
+
+.home__section {
+    white-space: nowrap;
+    overflow: auto;
+    margin: 20px 0;
+}
+
+.home__section::-webkit-scrollbar {
+    display: none;
+}
+
+.home__section .box {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: relative;
+}
+
+.box > i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25rem;
+}
+
+.home__section .box:first-child {
+    background: var(--color-gradient);
+    color: goldenrod;
+}
+
+/* ############################## PRODUCTS STYLING ######################## */
+
+.products {
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.products::-webkit-scrollbar {
+    display: none;
+}
+
+.products .cards {
+    width: 220px;
+    height: 300px;
+    background-color: var(--color-white);
+    display: inline-block;
+    margin-right: 0.65rem;
+    border-radius: 10px;
+    padding: 0.4rem;
+}
+
+.prod__image {
+    width: 100%;
+    height: 60%;
+    background-color: var(--color-gray);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.prod__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prod__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 40%;
+    position: relative;
+    padding: 0.55rem 0.4rem;
+}
+
+.prod__info h3 {
+    font-size: 0.95rem;
+    text-transform: capitalize;
+}
+
+.prod__info p {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.prod__info h5 {
+    font-size: 0.95rem;
+}
+
+.prod__info > button {
+    position: absolute;
+    bottom: 10%;
+    right: 4%;
+    padding: 0.55rem 0.65rem;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    background: var(--color-gradient);
+    color: goldenrod;
+}
+
+/* ########################## POPULAR STYLING ######################### */
+
+h2 {
+    font-size: 1.25rem;
+    margin: 20px 0;
+}
+
+.popular__products {
+    white-space: nowrap;
+    overflow: auto;
+    margin-bottom: 5rem;
+}
+
+.popular__products::-webkit-scrollbar {
+    display: none;
+}
+
+.popular__products .pop__cards {
+    width: 220px;
+    height: 95px;
+    background-color: var(--color-white);
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 0.45rem;
+}
+
+.popular__products .pop__cards::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.pop__image {
+    width: 40%;
+    height: 100%;
+    background-color: var(--color-gray);
+    border-radius: 10px;
+    float: left;
+    overflow: hidden;
+}
+
+.pop__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pop__info {
+    width: 60%;
+    height: 100%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 10px;
+}
+
+.pop__info h3 {
+    font-size: 0.95rem;
+    text-transform: capitalize;
+}
+
+.pop__info p {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.pop__info h5 {
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+/* ############################# MENU STYLING ########################## */
+
+section.menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--color-white);
+    z-index: 999;
+    box-shadow: rgba(100, 100, 111, 0.2) 7px 0px 29px 0px;
+    padding: 0 15px;
+}
+
+.inner__menu {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left__icon, .right__icon {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--color-icon);
+}
+
+.left__icon i:first-child {
+    color: var(--color-icon-dark);
+}
+
+.bag {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    padding: 1.25rem 1.35rem;
+    background: var(--color-gradient);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: goldenrod;
+    transform: translateX(-50%);
+}
